@@ -1,0 +1,101 @@
+Script started on Fri Jun 19 13:15:01 2020
+[?1034h13:15:01 jdetke@johns-MacBook-Pro:~/Projects/katacoda/k8s/Terraform/terraform-docker$ terraform init
+
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Checking for available provider plugins...
+- Downloading plugin for provider "docker" (terraform-providers/docker) 2.7.1...
+
+The following providers do not have any version constraints in configuration,
+so the latest version was installed.
+
+To prevent automatic upgrades to new major versions that may contain breaking
+changes, it is recommended to add version = "..." constraints to the
+corresponding provider blocks in configuration, with the constraint strings
+suggested below.
+
+* provider.docker: version = "~> 2.7"
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+13:15:08 jdetke@johns-MacBook-Pro:~/Projects/katacoda/k8s/Terraform/terraform-docker$ terraform init[K[K[K[Kappy[Kly
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # docker_container.nginx[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "docker_container" "nginx" {
+      [32m+[0m [0m[1m[0mattach[0m[0m           = false
+      [32m+[0m [0m[1m[0mbridge[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcommand[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mcontainer_logs[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mentrypoint[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0menv[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mexit_code[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mgateway[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mhostname[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mimage[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mip_address[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mip_prefix_length[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mipc_mode[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mlog_driver[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mlog_opts[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mlogs[0m[0m             = false
+      [32m+[0m [0m[1m[0mmust_run[0m[0m         = true
+      [32m+[0m [0m[1m[0mname[0m[0m             = "tutorial"
+      [32m+[0m [0m[1m[0mnetwork_data[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mread_only[0m[0m        = false
+      [32m+[0m [0m[1m[0mrestart[0m[0m          = "no"
+      [32m+[0m [0m[1m[0mrm[0m[0m               = false
+      [32m+[0m [0m[1m[0mshm_size[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mstart[0m[0m            = true
+      [32m+[0m [0m[1m[0muser[0m[0m             = (known after apply)
+
+      [32m+[0m [0mlabels {
+          [32m+[0m [0m[1m[0mlabel[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mvalue[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mports {
+          [32m+[0m [0m[1m[0mexternal[0m[0m = 80
+          [32m+[0m [0m[1m[0minternal[0m[0m = 80
+          [32m+[0m [0m[1m[0mip[0m[0m       = "0.0.0.0"
+          [32m+[0m [0m[1m[0mprotocol[0m[0m = "tcp"
+        }
+    }
+
+[1m  # docker_image.nginx[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "docker_image" "nginx" {
+      [32m+[0m [0m[1m[0mid[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mlatest[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m   = "nginx:latest"
+    }
+
+[0m[1mPlan:[0m 2 to add, 0 to change, 0 to destroy.[0m
+
+[0m[1mDo you want to perform these actions?[0m
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  [1mEnter a value:[0m [0myes
+
+[0m[1mdocker_image.nginx: Creating...[0m[0m
+[0m[1mdocker_image.nginx: Still creating... [10s elapsed][0m[0m
+[0m[1mdocker_image.nginx: Creation complete after 19s [id=sha256:2622e6cca7ebbb6e310743abce3fc47335393e79171b9d76ba9d4f446ce7b163nginx:latest][0m[0m
+[0m[1mdocker_container.nginx: Creating...[0m[0m
+[0m[1mdocker_container.nginx: Creation complete after 1s [id=9df28801ab8a71e71d95825f1fb9592ede9c1ab7fe59cb2c1be66a65b6725379][0m[0m
+[0m[1m[32m
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.[0m
+13:15:34 jdetke@johns-MacBook-Pro:~/Projects/katacoda/k8s/Terraform/terraform-docker$ 
