@@ -20,3 +20,6 @@
 #
 #   2020-06-23
 #   added foobar
+#   Removed foobar
+#   Re-added .gitignore
+#   Re-added secrets, for testing
